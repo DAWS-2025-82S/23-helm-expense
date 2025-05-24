@@ -37,8 +37,8 @@ appVersion: 1.0.0 # nginx app version
 
 # kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.40"
 # kubectl get pods -n kube-system --  check the drivers installed as pods
-# ______________________________________________________________________________________________________
-	
+# _____________________________________________________________________________________________________
+
 # cd 23-helm-expense/mysql
 
 # helm install mysql .
