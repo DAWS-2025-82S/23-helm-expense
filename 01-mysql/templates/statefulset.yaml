@@ -9,7 +9,7 @@ spec:
       app: mysql
       project: expense
       tier: db # has to match .spec.template.metadata.labels
-  serviceName: "mysql-headless"
+  serviceName: "mysql-headless" # headless service name
   replicas: {{ .Values.statefulset.replicas }} # by default is 1
   minReadySeconds: 10 # by default is 0
   template:
@@ -22,7 +22,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: mysql
-        image: joindevops/mysql:{{ .Values.statefulset.version }}
+        image: dath1/mysql:{{ .Values.statefulset.version }}
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql

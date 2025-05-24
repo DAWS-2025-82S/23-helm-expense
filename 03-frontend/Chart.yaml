@@ -3,3 +3,9 @@ name: frontend
 version: 1.0.0 # chart version
 description: This is frontend deployment
 appVersion: 1.0.0 # nginx app version
+
+
+# cd ../frontend
+# helm upgrade --install frontend .
+
+# kubectl get pods -n expense

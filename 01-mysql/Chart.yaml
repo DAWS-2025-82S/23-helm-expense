@@ -3,3 +3,46 @@ name: mysql
 version: 1.0.0 # chart version
 description: This is MySQL deployment
 appVersion: 1.0.0 # nginx app version
+
+
+# kubectl apply -f 01-namespace.yaml
+
+# Create Dynamic EBS
+# ----------------
+# 1. install EBS CSI drivers
+# 2. give permissions to worker nodes
+# 3. create storage class
+
+# kubectl apply -f 03-ebs-sc.yaml
+
+
+# Install ebs csi drivers using helm
+
+# helm upgrade --install aws-ebs-csi-driver \
+#     --namespace kube-system \
+#     aws-ebs-csi-driver/aws-ebs-csi-driver
+
+# Add permission to worker node
+
+#   select the worker node security tabs
+#   click on Iam roles
+#   Add permission and Attach "AmazonEBSCSIDriverPolicy" to manage volumes
+
+# kubectl apply -f 03-ebs-sc.yaml
+# ________________________________________________________________________________________________
+# Previous followed steps for kubernetes EBS volumes
+
+# drivers install(ebs csi driver) using kustomize
+# https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/install.md
+
+# kubectl apply -k "github.com/kubernetes-sigs/aws-ebs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-1.40"
+# kubectl get pods -n kube-system --  check the drivers installed as pods
+# ______________________________________________________________________________________________________
+	
+# cd 23-helm-expense/mysql
+
+# helm install mysql .
+
+# kubectl get pods -n expense
+
+# kubectl get svc -n expense  
