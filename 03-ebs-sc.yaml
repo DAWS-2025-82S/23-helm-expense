@@ -1,0 +1,24 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+
+
+
+# kubectl get sc
+
+# 1. install drivers
+# 2. give permissions to worker nodes
+# 3. create storage class
+
+# storageclass example
+# https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/examples/kubernetes/dynamic-provisioning/manifests/storageclass.yaml
+
+# kubectl apply -f 03-ebs-sc.yaml
+
+# kubectl get sc
+
+# kubectl api-resources
