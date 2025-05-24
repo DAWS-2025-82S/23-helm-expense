@@ -9,3 +9,11 @@ appVersion: 1.0.0 # nginx app version
 # helm upgrade --install frontend .
 
 # kubectl get pods -n expense
+
+# Test the app 
+# http://<LB_DNS_NAME>:80/
+
+# Creates cluster using eksctl command below
+#      eksctl create cluster --config-file=eks.yaml
+# This creates Classic Load Balancer with Listener and without any rules
+# Also creates Target Instances with worker nodes(Ec2 Instances) without any Target Group
